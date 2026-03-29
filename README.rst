@@ -128,6 +128,19 @@ unrelated commits in the master can affect the results. Alternately you
 can also merge master into the branch first to make sure it is
 up-to-date.
 
+Prototype PR benchmark runner
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For pull request workflows, you can use ``benchmark_runner.py`` to compare
+``HEAD`` against a stable base (for example ``origin/master``) and emit a
+simple JSON report with ``base`` and ``target`` sections.
+
+::
+
+    $ python benchmark_runner.py --base-ref origin/master --target-ref HEAD
+
+The output report is written to ``benchmark_results/runner_report.json``.
+
 Running benchmarks for a selection of commits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
